@@ -1,0 +1,48 @@
+{
+  "name": "UserPurchase",
+  "type": "object",
+  "properties": {
+    "user_id": {
+      "type": "string",
+      "description": "ID do usuário que fez a compra"
+    },
+    "item_id": {
+      "type": "string",
+      "description": "ID do StoreItem comprado"
+    },
+    "item_name": {
+      "type": "string",
+      "description": "Nome do item comprado (para referência)"
+    },
+    "purchase_date": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Data da compra"
+    },
+    "coins_spent": {
+      "type": "number",
+      "description": "Quantidade de moedas gastas"
+    },
+    "redemption_code": {
+      "type": "string",
+      "description": "Código de resgate gerado (se aplicável)"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "pending_redemption",
+        "redeemed",
+        "expired",
+        "app_item_active"
+      ],
+      "default": "pending_redemption",
+      "description": "Status da compra/resgate"
+    }
+  },
+  "required": [
+    "user_id",
+    "item_id",
+    "purchase_date",
+    "coins_spent"
+  ]
+}

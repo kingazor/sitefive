@@ -1,0 +1,78 @@
+{
+  "name": "User",
+  "type": "object",
+  "properties": {
+    "nickname": {
+      "type": "string",
+      "description": "Nome de usuário no FiveM"
+    },
+    "discord_id": {
+      "type": "string",
+      "description": "ID do Discord do usuário"
+    },
+    "steam_id": {
+      "type": "string",
+      "description": "Steam ID do usuário"
+    },
+    "avatar_url": {
+      "type": "string",
+      "description": "URL do avatar do usuário"
+    },
+    "bio": {
+      "type": "string",
+      "description": "Biografia do usuário"
+    },
+    "favorite_servers": {
+      "type": "array",
+      "items": {"type": "string"},
+      "default": [],
+      "description": "IDs dos servidores favoritos"
+    },
+    "is_server_owner": {
+      "type": "boolean",
+      "default": false,
+      "description": "Se o usuário é proprietário de servidor"
+    },
+    "xp": {
+      "type": "number",
+      "default": 0,
+      "description": "Pontos de experiência do usuário"
+    },
+    "level": {
+      "type": "number",
+      "default": 1,
+      "description": "Nível do usuário"
+    },
+    "coins": {
+      "type": "number",
+      "default": 100,
+      "description": "Moedas virtuais do usuário"
+    },
+    "badges": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": {"type": "string"},
+          "name": {"type": "string"},
+          "description": {"type": "string"},
+          "icon": {"type": "string"},
+          "color": {"type": "string"}
+        }
+      },
+      "default": [],
+      "description": "Badges conquistadas pelo usuário"
+    },
+    "last_login": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Último login do usuário"
+    },
+    "login_streak": {
+      "type": "number",
+      "default": 0,
+      "description": "Sequência de dias logados consecutivos"
+    }
+  },
+  "required": []
+}

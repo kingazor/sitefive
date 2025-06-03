@@ -1,0 +1,38 @@
+{
+  "name": "UserMissionProgress",
+  "type": "object",
+  "properties": {
+    "user_id": {
+      "type": "string",
+      "description": "ID do usuário"
+    },
+    "mission_id": {
+      "type": "string",
+      "description": "ID da missão"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "pending",
+        "completed",
+        "claimed"
+      ],
+      "default": "pending",
+      "description": "Status da missão para o usuário"
+    },
+    "progress": {
+      "type": "object",
+      "default": {},
+      "description": "Progresso atual da missão"
+    },
+    "completed_at": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Quando foi completada"
+    }
+  },
+  "required": [
+    "user_id",
+    "mission_id"
+  ]
+}

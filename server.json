@@ -1,0 +1,113 @@
+{
+  "name": "Server",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string",
+      "description": "Nome do servidor"
+    },
+    "description": {
+      "type": "string",
+      "description": "Descrição detalhada do servidor"
+    },
+    "ip": {
+      "type": "string",
+      "description": "IP do servidor"
+    },
+    "port": {
+      "type": "number",
+      "description": "Porta do servidor"
+    },
+    "max_players": {
+      "type": "number",
+      "description": "Número máximo de jogadores"
+    },
+    "current_players": {
+      "type": "number",
+      "default": 0,
+      "description": "Jogadores online atualmente"
+    },
+    "category": {
+      "type": "string",
+      "enum": [
+        "roleplay",
+        "freeroam",
+        "racing",
+        "deathmatch",
+        "cops_robbers",
+        "outros"
+      ],
+      "description": "Categoria do servidor"
+    },
+    "owner_id": {
+      "type": "string",
+      "description": "ID do proprietário do servidor"
+    },
+    "website": {
+      "type": "string",
+      "description": "Website do servidor"
+    },
+    "discord": {
+      "type": "string",
+      "description": "Link do Discord"
+    },
+    "banner_url": {
+      "type": "string",
+      "description": "URL da imagem de banner"
+    },
+    "logo_url": {
+      "type": "string",
+      "description": "URL do logo do servidor"
+    },
+    "tags": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Tags do servidor"
+    },
+    "is_active": {
+      "type": "boolean",
+      "default": false,
+      "description": "Se o servidor está ativo e aprovado"
+    },
+    "status": {
+      "type": "string",
+      "enum": [
+        "pending",
+        "approved",
+        "rejected"
+      ],
+      "default": "pending",
+      "description": "Status da solicitação do servidor"
+    },
+    "rejection_reason": {
+      "type": "string",
+      "description": "Motivo da rejeição, se aplicável"
+    },
+    "uptime": {
+      "type": "number",
+      "default": 100,
+      "description": "Uptime do servidor em porcentagem"
+    },
+    "rating_average": {
+      "type": "number",
+      "default": 0,
+      "description": "Média das avaliações"
+    },
+    "rating_count": {
+      "type": "number",
+      "default": 0,
+      "description": "Número total de avaliações"
+    }
+  },
+  "required": [
+    "name",
+    "description",
+    "ip",
+    "port",
+    "max_players",
+    "category",
+    "owner_id"
+  ]
+}

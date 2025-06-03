@@ -1,0 +1,80 @@
+{
+  "name": "StoreItem",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string",
+      "description": "Nome do item na loja"
+    },
+    "description": {
+      "type": "string",
+      "description": "Descrição detalhada do item"
+    },
+    "cost_coins": {
+      "type": "number",
+      "description": "Custo do item em moedas do app (definido pelo Admin)"
+    },
+    "cost_coins_suggested": {
+      "type": "number",
+      "description": "Custo sugerido pelo proprietário do servidor (opcional)"
+    },
+    "type": {
+      "type": "string",
+      "enum": [
+        "server_benefit",
+        "app_cosmetic",
+        "xp_booster"
+      ],
+      "description": "Tipo de item"
+    },
+    "server_id": {
+      "type": "string",
+      "description": "ID do servidor FiveM ao qual o benefício se aplica (se type='server_benefit')"
+    },
+    "server_name": {
+      "type": "string",
+      "description": "Nome do servidor FiveM (para exibição fácil na loja)"
+    },
+    "benefit_details": {
+      "type": "string",
+      "description": "Detalhes específicos do benefício (ex: 'VIP por 7 dias', '100k Dinheiro In-Game')"
+    },
+    "redemption_instructions_user": {
+      "type": "string",
+      "description": "Instruções para o usuário sobre como resgatar o benefício no servidor"
+    },
+    "icon_url": {
+      "type": "string",
+      "description": "URL de um ícone para o item na loja"
+    },
+    "stock": {
+      "type": "number",
+      "default": -1,
+      "description": "Quantidade em estoque (-1 para ilimitado)"
+    },
+    "is_active": {
+      "type": "boolean",
+      "default": false,
+      "description": "Se o item está ativo e visível na loja (após aprovação)"
+    },
+    "submitted_by_user_id": {
+      "type": "string",
+      "description": "ID do usuário (dono do servidor) que submeteu este item"
+    },
+    "admin_approved": {
+      "type": "boolean",
+      "default": false,
+      "description": "Se o item foi aprovado pelo administrador do app para aparecer na loja"
+    },
+    "admin_rejection_reason": {
+      "type": "string",
+      "description": "Motivo da rejeição pelo admin (se aplicável)"
+    }
+  },
+  "required": [
+    "name",
+    "description",
+    "type",
+    "submitted_by_user_id"
+  ]
+}

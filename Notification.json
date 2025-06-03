@@ -1,0 +1,47 @@
+{
+  "name": "Notification",
+  "type": "object",
+  "properties": {
+    "user_id": {
+      "type": "string",
+      "description": "ID do usuário que deve receber a notificação"
+    },
+    "title": {
+      "type": "string",
+      "description": "Título da notificação"
+    },
+    "message": {
+      "type": "string",
+      "description": "Mensagem da notificação"
+    },
+    "type": {
+      "type": "string",
+      "enum": [
+        "badge",
+        "server_approved",
+        "server_rejected",
+        "mission_completed",
+        "level_up",
+        "general",
+        "login_streak_reward",
+        "store_item_status"
+      ],
+      "description": "Tipo da notificação"
+    },
+    "is_read": {
+      "type": "boolean",
+      "default": false,
+      "description": "Se foi lida pelo usuário"
+    },
+    "data": {
+      "type": "object",
+      "description": "Dados adicionais da notificação"
+    }
+  },
+  "required": [
+    "user_id",
+    "title",
+    "message",
+    "type"
+  ]
+}

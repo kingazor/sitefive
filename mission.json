@@ -1,0 +1,57 @@
+{
+  "name": "Mission",
+  "type": "object",
+  "properties": {
+    "title": {
+      "type": "string",
+      "description": "Título da missão"
+    },
+    "description": {
+      "type": "string",
+      "description": "Descrição detalhada da missão"
+    },
+    "type": {
+      "type": "string",
+      "enum": [
+        "daily",
+        "weekly",
+        "achievement",
+        "special"
+      ],
+      "description": "Tipo da missão"
+    },
+    "xp_reward": {
+      "type": "number",
+      "default": 0,
+      "description": "XP concedido ao completar"
+    },
+    "coins_reward": {
+      "type": "number",
+      "default": 0,
+      "description": "Moedas concedidas ao completar"
+    },
+    "badge_reward": {
+      "type": "string",
+      "description": "ID da badge concedida (opcional)"
+    },
+    "criteria": {
+      "type": "object",
+      "description": "Critérios para completar a missão"
+    },
+    "is_active": {
+      "type": "boolean",
+      "default": true,
+      "description": "Se a missão está ativa"
+    },
+    "expires_at": {
+      "type": "string",
+      "format": "date-time",
+      "description": "Quando a missão expira (para missões temporárias)"
+    }
+  },
+  "required": [
+    "title",
+    "description",
+    "type"
+  ]
+}
